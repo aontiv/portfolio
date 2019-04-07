@@ -1,0 +1,11 @@
+{
+    "name": "portfolio",
+    "private": true,
+    "scripts": {
+        "sass": "node-sass src/main.scss dist/main.css",
+        "sass:watch": "node-sass --watch src/main.scss dist/main.css"
+    },
+    "devDependencies": {
+        "node-sass": "^4.11.0"
+    }
+}
