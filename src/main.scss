@@ -1,0 +1,146 @@
+/* Default Styles */
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,700');
+
+$header-font: "Roboto", sans-serif;
+$body-font: "Montserrat", sans-serif;
+
+/* COLORS */
+$accent: #4e71ab;
+$primary: #ff7600;
+$secondary: #00d70e;
+
+/* Basic Style Reset */
+html {
+    box-sizing: border-box;
+    font-family: $body-font;
+    letter-spacing: 0.03125rem;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    font-family: $header-font;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* App Section */
+.app {
+    position: relative;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    height: 40rem;
+    max-height: 40rem;
+    flex-flow: column nowrap;
+
+    &:before {
+        z-index: 1;
+        width: 100%;
+        content: "";
+        height: 100%;
+        opacity: 0.55;
+        position: absolute;
+        background-color: #000;
+    }
+
+    h1,
+    span {
+        z-index: 10;
+        position: relative;
+    }
+
+    &-top {
+        flex: 1;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+
+        &__title {
+            color: #fff;
+            margin-top: 10rem;
+            font-size: 2.25rem;
+        }
+
+        &__subtitle {
+            color: $primary;
+            font-size: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        &__subtitle--highlight {
+            color: $secondary;
+        }
+
+        &__sub-subtitle {
+            color: #fff;
+            font-size: 0.85rem;
+            margin-top: 0.625rem;
+        }
+    }
+
+    &-bot {
+        display: flex;
+        padding: 0 1rem;
+
+        &__icon {
+            flex: 1;
+            display: flex;
+            text-align: center;
+            align-items: flex-end;
+            justify-content: flex-end;
+
+            i {
+                font-size: 3rem;
+                transform: translateX(50%);
+            }
+        }
+
+        &__resume {
+            flex: 1;
+            display: flex;
+            color: $accent;
+            font-weight: 700; 
+            font-size: 0.85rem;
+            align-items: flex-end;
+            justify-content: flex-end;
+            padding-bottom: 0.3125rem;
+        }
+    }
+
+    &__img {
+        top: 0;
+        left: 0;
+        position: absolute;
+    }
+
+    &__svg {
+        right: 0;
+        bottom: 0;
+        z-index: 5;
+        width: 100%;
+        height: 10.125rem;
+        position: absolute;
+    }
+}
