@@ -45,15 +45,20 @@ img {
 
 /* App Section */
 .app {
+    min-width: 20rem;
     position: relative;
 }
 
 /* Header Section */
 .header {
     display: flex;
-    height: 40rem;
-    max-height: 40rem;
+    position: relative;
+    margin-bottom: 4.0625rem;
     flex-flow: column nowrap;
+
+    @media screen and (min-width: 600px) {
+        margin-bottom: 8rem;
+    }
 
     &:before {
         z-index: 1;
@@ -68,25 +73,38 @@ img {
     h1,
     span {
         z-index: 10;
-        position: relative;
+        // position: relative;
     }
 
     &-top {
+        top: 0;
+        left: 0;
         flex: 1;
+        width: 100%;
         display: flex;
         flex-flow: column;
+        position: absolute;
         align-items: center;
 
         &__title {
             color: #fff;
             margin-top: 10rem;
             font-size: 2.25rem;
+
+            @media screen and (min-width: 600px) {
+                margin-top: 15rem;
+                font-size: 4.0625rem;
+            }
         }
 
         &__subtitle {
             color: $primary;
             font-size: 1.25rem;
             margin-top: 1.25rem;
+
+            @media screen and (min-width: 600px) {
+                font-size: 1.875rem;
+            }
         }
 
         &__subtitle--highlight {
@@ -97,50 +115,262 @@ img {
             color: #fff;
             font-size: 0.85rem;
             margin-top: 0.625rem;
+
+            @media screen and (min-width: 600px) {
+                font-size: 1.25rem;
+            }
         }
     }
 
     &-bot {
-        display: flex;
-        padding: 0 1rem;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        position: absolute;
+
+        &-container {
+            display: flex;
+            position: relative;
+            justify-content: center;
+
+            @media screen and (min-width: 600px) {
+                margin: 0 auto;
+                max-width: 37.5rem;
+            }
+        }
 
         &__icon {
-            flex: 1;
-            display: flex;
-            text-align: center;
-            align-items: flex-end;
-            justify-content: flex-end;
-
             i {
                 font-size: 3rem;
-                transform: translateX(50%);
+
+                @media screen and (min-width: 600px) {
+                    font-size: 3.75rem;
+                }
             }
         }
 
         &__resume {
-            flex: 1;
-            display: flex;
+            right: 0;
+            bottom: 0;
             color: $accent;
             font-weight: 700; 
+            margin-right: 1rem;
             font-size: 0.85rem;
-            align-items: flex-end;
-            justify-content: flex-end;
+            position: absolute;
             padding-bottom: 0.3125rem;
+
+            @media screen and (min-width: 600px) {
+                margin-right: 0;
+                font-size: 1.125rem;
+            }
         }
     }
 
-    &__img {
-        top: 0;
-        left: 0;
-        position: absolute;
-    }
-
     &__svg {
-        right: 0;
+        left: 0;
         bottom: 0;
         z-index: 5;
-        width: 100%;
-        height: 10.125rem;
         position: absolute;
+    }
+}
+
+/* Main Projects Section */
+.projects {
+    display: grid;
+    margin: 0 1rem;
+    grid-column-gap: 1rem;
+    grid-template-columns: repeat(4, 1fr);
+
+    @media screen and (min-width: 600px) {
+        margin: 0 auto;
+        max-width: 37.5rem;
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    .project {
+        position: relative;
+        grid-column: 1 / 5;
+        margin-bottom: 3rem;
+
+        @media screen and (min-width: 600px) {
+            grid-column: 1/ 9;
+            margin-bottom: 5rem;
+        }
+
+        &-header {
+            display: flex;
+            position: relative;
+            align-items: center;
+            margin-bottom: 0.3125rem;
+
+            &__icon {
+                color: $primary;
+    
+                i {
+                    font-size: 1.25rem;
+
+                    @media screen and (min-width: 600px) {
+                        font-size: 2rem;
+                    }
+                }
+            }
+
+            &__title {
+                font-size: 1.25rem;
+                padding-left: 0.3125rem;
+
+                @media screen and (min-width: 600px) {
+                    font-size: 2.1875rem;
+                }
+            }
+
+            &:after {
+                right: 0;
+                bottom: 0;
+                width: 50%;
+                content: "";
+                height: 0.625rem;
+                position: absolute;
+                margin-right: 0.3125rem;
+                border-top: 1px solid $primary;
+                border-right: 1px solid $primary;
+
+                @media screen and (min-width: 600px) {
+                    height: 1rem;
+                }
+            }
+        }
+
+        &-image {
+            position: relative;
+
+            &__img {
+                width: 100%;
+            }
+
+            &-overlay {
+                top: 0;
+                left: 0;
+                opacity: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                position: absolute;
+                align-items: center;
+                justify-content: center;
+                transition: opacity 500ms;
+                background-color: rgba(0, 0, 0, 0.75);
+
+                &__btn {
+                    color: $primary;
+                    width: 7.8125rem;
+                    margin: 0.625rem;
+                    font-size: 0.85rem;
+                    transition: color 250ms;
+                    font-family: $body-font;
+                    border: 1px solid $primary;
+                    padding: 0.625rem 0.3125rem;
+                    background-color: transparent;
+
+                    @media screen and (min-width: 600px) {
+                        width: 15rem;
+                        padding: 1rem;
+                        margin: 1.25rem;
+                        font-size: 1.5625rem;
+                    }
+
+                    &:hover {
+                        color: #fff;
+                        cursor: pointer;
+                        border: 1px solid #fff;
+                    }
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &:after {
+            left: 0;
+            width: 95%;
+            content: "";
+            height: 0.625rem;
+            bottom: -0.9375rem;
+            position: absolute;
+            border-left: 1px solid $primary;
+            border-right: 1px solid $primary;
+            border-bottom: 1px solid $primary;
+
+            @media screen and (min-width: 600px) {
+                height: 1rem;
+                bottom: -1.5rem;
+            }
+        }
+    }
+}
+
+/* Footer Section */
+.footer {
+    display: flex;
+    position: relative;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+
+    &-images {
+        top: 0;
+        left: 0;
+        margin-left: 1rem;
+        position: absolute;
+
+        @media screen and (min-width: 600px) {
+            margin: 0;
+            width: 100%;
+        }
+
+        &-container {
+            margin: 0 auto;
+            max-width: 37.5rem;
+        }
+
+        &__image {
+            display: inline-block;
+
+            @media screen and (min-width: 600px) {
+                width: 3.4375rem;
+            }
+        }
+    }
+
+    &-totop {
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        width: 100%;
+        margin: 0 1rem;
+        position: absolute;
+
+        @media screen and (min-width: 600px) {
+            margin: 0;
+        }
+
+        &-container {
+            margin: 0 auto;
+            max-width: 37.5rem;
+        }
+
+        &__icon {
+            float: right;
+
+            i {
+                color: #fff;
+                font-size: 2.5rem;
+
+                @media screen and (min-width: 600px) {
+                    font-size: 3.5rem;
+                }
+            }
+        }
     }
 }
