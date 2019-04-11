@@ -12,7 +12,6 @@
     </head>
     <body>
         <div class="app">
-
             <!-- Top Section -->
             <header class="header">
                 <section class="header-top">
@@ -23,21 +22,19 @@
                 <section class="header-bot">
                     <div class="header-bot-container">
                         <span class="header-bot__icon"><i class="fas fa-sort-down"></i></span>
-                        <span class="header-bot__resume">RESUME</span>
+                        <span class="header-bot__resume">resume</span>
                     </div>
                 </section>
-                <picture>
-                    <source srcset="./img/main_768.png" media="(min-width: 361px)" />
-                    <img class="header__image" src="img/main_360.png" object-fit="contain" alt="image of lake tahoe">
+                <picture class="header__picture">
+                    <source srcset="./img/main_1920.jpg" media="(min-width: 769px)" />
+                    <source srcset="./img/main_768.jpg" media="(min-width: 361px)" />
+                    <img class="header__image" src="img/main_360.jpg" object-fit="contain" alt="image of lake tahoe">
                 </picture>
-                <svg class="header__svg" viewBox="0 0 360 162" xmlns="http://www.w3.org/2000/svg">
-                    <polygon points="0,162 360,0 360,162" stroke="none" fill="#fff" />
-                </svg>
             </header>
 
             <!-- Main Projects Section -->
             <main class="projects">
-                <section class="project">
+                <section class="project one">
                     <header class="project-header">
                         <span class="project-header__icon"><i class="fas fa-circle"></i></span>
                         <span class="project-header__title">Project One</span>
@@ -51,7 +48,7 @@
                     </div>
                 </section>
 
-                <section class="project">
+                <section class="project two">
                     <header class="project-header">
                         <span class="project-header__icon"><i class="fas fa-circle"></i></span>
                         <span class="project-header__title">Project One</span>
@@ -65,7 +62,7 @@
                     </div>
                 </section>
 
-                <section class="project">
+                <section class="project three">
                     <header class="project-header">
                         <span class="project-header__icon"><i class="fas fa-circle"></i></span>
                         <span class="project-header__title">Project One</span>
@@ -107,8 +104,8 @@
                     <polygon points="0,162 360,0 360,162" stroke="none" fill="#000" />
                 </svg>
             </footer>
-
         </div>
-    </body>
 
+        <script src="main.js"></script>
+    </body>
 </html>
