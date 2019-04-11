@@ -15,6 +15,7 @@ $secondary: #00d70e;
 html {
     box-sizing: border-box;
     font-family: $body-font;
+    scroll-behavior: smooth;
     letter-spacing: 0.03125rem;
 }
 
@@ -51,6 +52,7 @@ img {
 
 /* Header Section */
 .header {
+    height: 100vh;
     display: flex;
     position: relative;
     margin-bottom: 4.0625rem;
@@ -61,6 +63,7 @@ img {
     }
 
     @media screen and (min-width: 769px) {
+        height: auto;
         margin-top: 1rem;
         margin-bottom: 4.75rem;
     }
@@ -96,6 +99,10 @@ img {
 
             @media screen and (min-width: 769px) {
                 margin-top: 6.75rem;
+            }
+
+            @media screen and (orientation: "landscape") and (max-width: 768px) {
+                margin-top: 5rem;
             }
         }
 
@@ -166,18 +173,25 @@ img {
             position: absolute;
             padding-bottom: 0.3125rem;
 
+            &:hover {
+                color: $secondary;
+            }
+
             @media screen and (min-width: 600px) {
                 margin-right: 0;
+                font-size: 1.5rem;
             }
 
             @media screen and (min-width: 769px) {
                 color: #fff;
+                font-size: 1rem;
                 padding-right: 1.5rem;
             }
         }
     }
 
     &__picture {
+        height: 100%;
         display: flex;
         justify-content: center;
     }
@@ -278,7 +292,7 @@ img {
             &:after {
                 right: 0;
                 bottom: 0;
-                width: 50%;
+                width: 35%;
                 content: "";
                 height: 0.625rem;
                 position: absolute;
@@ -361,9 +375,14 @@ img {
 /* Footer Section */
 .footer {
     display: flex;
+    margin-top: 3rem;
     position: relative;
     flex-flow: column nowrap;
     justify-content: space-between;
+
+    @media screen and (min-width: 600px) {
+        margin-top: 5rem;
+    }
 
     &-images {
         top: 0;
@@ -383,13 +402,21 @@ img {
             @media screen and (min-width: 769px) {
                 max-width: 79.5rem;
             }
+
+            picture:nth-child(1) {
+                img {
+                    margin-left: 0;
+                }
+            }
         }
 
         &__image {
+            margin: 0.15625rem;
             display: inline-block;
 
             @media screen and (min-width: 600px) {
                 width: 3.4375rem;
+                margin: 0.3125rem;
             }
         }
     }
@@ -413,6 +440,8 @@ img {
 
         &__icon {
             float: right;
+            margin: 1rem;
+            margin-right: 0;
 
             i {
                 color: #fff;

@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="./main.min.css">
 
         <title>Anthony Ontiveros</title>
     </head>
@@ -22,7 +22,9 @@
                 <section class="header-bot">
                     <div class="header-bot-container">
                         <span class="header-bot__icon"><i class="fas fa-sort-down"></i></span>
-                        <span class="header-bot__resume">resume</span>
+                        <a href="./files/resume.pdf" download target="_blank">
+                            <span class="header-bot__resume">resume</span>
+                        </a>
                     </div>
                 </section>
                 <picture class="header__picture">
@@ -83,15 +85,21 @@
                     <div class="footer-images-container">
                         <picture>
                             <source srcset="./img/linkedin_768.png" media="(min-width: 600px)" />
-                            <img class="footer-images__image" src="./img/linkedin_360.png" alt="linkedin image" />
+                            <a href="https://www.linkedin.com/in/anthonyontiveros/" rel="noreferrer" target="_blank">
+                                <img class="footer-images__image" src="./img/linkedin_360.png" alt="linkedin image" />
+                            </a>
                         </picture>
                         <picture>
                             <source srcset="./img/github_768.png" media="(min-width: 600px)" />
-                            <img class="footer-images__image" src="./img/github_360.png" alt="github image" />
+                            <a href="https://github.com/aontiv" rel="noreferrer" target="_blank">
+                                <img class="footer-images__image" src="./img/github_360.png" alt="github image" />
+                            </a>
                         </picture>
                         <picture>
                             <source srcset="./img/envelope_768.png" media="(min-width: 600px)" />
-                            <img class="footer-images__image" src="./img/envelope_360.png" alt="envelope image" />
+                            <a href="mailto:anthony.ontiveros.d@gmail.com">
+                                <img class="footer-images__image" src="./img/envelope_360.png" alt="envelope image" />
+                            </a>
                         </picture>
                     </div>
                 </div>
@@ -106,6 +114,6 @@
             </footer>
         </div>
 
-        <script src="main.js"></script>
+        <script src="./main.min.js"></script>
     </body>
 </html>

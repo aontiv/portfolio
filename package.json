@@ -2,10 +2,19 @@
     "name": "portfolio",
     "private": true,
     "scripts": {
-        "sass": "node-sass src/main.scss dist/main.css",
-        "sass:watch": "node-sass --watch src/main.scss dist/main.css"
+        "sass": "node-sass src/main.scss src/main.css",
+        "sass:watch": "node-sass --watch src/main.scss src/main.css",
+        "minify": "npm run minify:js && npm run minify:css && npm run minify:html",
+        "minify:js": "node-minify --compressor uglify-es --input src/main.js --output dist/main.min.js",
+        "minify:css": "node-minify --compressor clean-css --input src/main.css --output dist/main.min.css",
+        "minify:html": "node-minify --compressor html-minifier --input src/index.html --output dist/index.min.html"
     },
     "devDependencies": {
-        "node-sass": "^4.11.0"
+        "@node-minify/cli": "^4.1.0",
+        "clean-css": "^4.2.1",
+        "html-minifier": "^4.0.0",
+        "node-minify": "^3.6.0",
+        "node-sass": "^4.11.0",
+        "uglify-es": "^3.3.9"
     }
 }

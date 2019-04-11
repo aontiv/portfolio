@@ -6,6 +6,7 @@
 html {
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
+  scroll-behavior: smooth;
   letter-spacing: 0.03125rem; }
 
 *,
@@ -36,6 +37,7 @@ img {
 
 /* Header Section */
 .header {
+  height: 100vh;
   display: flex;
   position: relative;
   margin-bottom: 4.0625rem;
@@ -45,6 +47,7 @@ img {
       margin-bottom: 8rem; } }
   @media screen and (min-width: 769px) {
     .header {
+      height: auto;
       margin-top: 1rem;
       margin-bottom: 4.75rem; } }
   .header h1,
@@ -73,6 +76,9 @@ img {
       @media screen and (min-width: 769px) {
         .header-top__title {
           margin-top: 6.75rem; } }
+      @media screen and (orientation: landscape) and (max-width: 768px) {
+        .header-top__title {
+          margin-top: 5rem; } }
     .header-top__subtitle {
       color: #ff7600;
       font-size: 1.25rem;
@@ -120,14 +126,19 @@ img {
       font-size: 0.85rem;
       position: absolute;
       padding-bottom: 0.3125rem; }
+      .header-bot__resume:hover {
+        color: #00d70e; }
       @media screen and (min-width: 600px) {
         .header-bot__resume {
-          margin-right: 0; } }
+          margin-right: 0;
+          font-size: 1.5rem; } }
       @media screen and (min-width: 769px) {
         .header-bot__resume {
           color: #fff;
+          font-size: 1rem;
           padding-right: 1.5rem; } }
   .header__picture {
+    height: 100%;
     display: flex;
     justify-content: center; }
   .header__svg {
@@ -200,7 +211,7 @@ img {
       .projects .project-header:after {
         right: 0;
         bottom: 0;
-        width: 50%;
+        width: 35%;
         content: "";
         height: 0.625rem;
         position: absolute;
@@ -263,9 +274,13 @@ img {
 /* Footer Section */
 .footer {
   display: flex;
+  margin-top: 3rem;
   position: relative;
   flex-flow: column nowrap;
   justify-content: space-between; }
+  @media screen and (min-width: 600px) {
+    .footer {
+      margin-top: 5rem; } }
   .footer-images {
     top: 0;
     left: 0;
@@ -281,11 +296,15 @@ img {
       @media screen and (min-width: 769px) {
         .footer-images-container {
           max-width: 79.5rem; } }
+      .footer-images-container picture:nth-child(1) img {
+        margin-left: 0; }
     .footer-images__image {
+      margin: 0.15625rem;
       display: inline-block; }
       @media screen and (min-width: 600px) {
         .footer-images__image {
-          width: 3.4375rem; } }
+          width: 3.4375rem;
+          margin: 0.3125rem; } }
   .footer-totop {
     right: 0;
     bottom: 0;
@@ -300,7 +319,9 @@ img {
       margin: 0 auto;
       max-width: 37.5rem; }
     .footer-totop__icon {
-      float: right; }
+      float: right;
+      margin: 1rem;
+      margin-right: 0; }
       .footer-totop__icon i {
         color: #fff;
         font-size: 2.5rem; }
